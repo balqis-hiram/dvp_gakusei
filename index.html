@@ -1,0 +1,1799 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>dバリューパス｜ChargeSPOTが借り放題、月550円。大学生の充電・映画・カラオケがお得に</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@500;700;900&family=Noto+Sans+JP:wght@400;500;700;900&family=Bebas+Neue&family=Zen+Kaku+Gothic+New:wght@700;900&family=M+PLUS+Rounded+1c:wght@800;900&family=Kosugi+Maru&family=Comfortaa:wght@600;700&family=Anton&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --docomo-red: #cc0033;
+    --docomo-red-dark: #a30028;
+    --accent-yellow: #ffe600;
+    --charge-blue: #00b4d8;
+    --charge-blue-dark: #0077b6;
+    --ink: #1a1a1a;
+    --ink-soft: #555;
+    --paper: #fffdf8;
+    --paper-alt: #fff5f0;
+    --border: #e8e8e8;
+    --shadow: 0 10px 40px rgba(204, 0, 51, 0.08);
+    --shadow-strong: 0 20px 60px rgba(204, 0, 51, 0.15);
+    --font-display: 'Bebas Neue', 'Noto Serif JP', serif;
+    --font-jp-display: 'Noto Serif JP', serif;
+    --font-jp-body: 'Noto Sans JP', sans-serif;
+    --font-fv-jp: 'Zen Kaku Gothic New', 'Noto Sans JP', sans-serif;
+    --font-fv-num: 'Anton', 'Bebas Neue', sans-serif;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: var(--font-jp-body);
+    color: var(--ink);
+    background: var(--paper);
+    line-height: 1.7;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  /* WCAG: キーボードフォーカスの可視化 */
+  a:focus-visible, button:focus-visible {
+    outline: 3px solid var(--charge-blue-dark);
+    outline-offset: 2px;
+    border-radius: 4px;
+  }
+
+  /* WCAG: 動きの抑制設定を尊重 */
+  @media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+    *, *::before, *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+    }
+  }
+
+  .container {
+    max-width: 480px;
+    margin: 0 auto;
+    background: var(--paper);
+    position: relative;
+  }
+
+  section { padding: 52px 24px; }
+
+  .section-label {
+    display: inline-block;
+    font-family: var(--font-jp-body);
+    font-size: 14px;
+    font-weight: 700;
+    color: var(--docomo-red);
+    letter-spacing: 0.05em;
+    margin-bottom: 12px;
+    position: relative;
+    padding-left: 32px;
+    line-height: 1.3;
+  }
+  .section-label::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 50%;
+    width: 24px;
+    height: 2px;
+    background: var(--docomo-red);
+  }
+  .section-title {
+    font-family: var(--font-jp-display);
+    font-size: 26px;
+    font-weight: 900;
+    line-height: 1.45;
+    margin-bottom: 24px;
+    letter-spacing: -0.01em;
+  }
+  .section-title .accent { color: var(--docomo-red); }
+
+  /* ============ FIRST VIEW ============ */
+  .fv {
+    position: relative;
+    padding: 24px 20px 36px;
+    background: #f5f6f8;
+    color: var(--ink);
+    text-align: center;
+  }
+  .fv-brand {
+    display: block;
+    text-align: left;
+    margin-bottom: 20px;
+    line-height: 1;
+  }
+  .fv-brand-logo {
+    display: block;
+    width: 150px;
+    max-width: 45%;
+    height: auto;
+  }
+
+  .fv-badge {
+    display: inline-block;
+    background: linear-gradient(135deg, #ffe600 0%, #ffb300 100%);
+    color: var(--ink);
+    border: 2px solid var(--ink);
+    font-family: 'Zen Kaku Gothic New', sans-serif;
+    font-weight: 900;
+    font-size: 15px;
+    padding: 6px 18px;
+    border-radius: 999px;
+    letter-spacing: 0.06em;
+    margin-bottom: 18px;
+    transform: rotate(-2deg);
+    box-shadow: 0 3px 0 rgba(0,0,0,0.2);
+  }
+
+  .fv-catch {
+    font-family: var(--font-fv-jp);
+    font-weight: 900;
+    line-height: 1.35;
+    color: var(--ink);
+    margin-bottom: 12px;
+  }
+  .fv-catch .line1 {
+    display: block;
+    font-size: 27px;
+  }
+  .fv-catch .line2 {
+    display: block;
+    font-size: 27px;
+  }
+  .fv-catch .hl { color: var(--charge-blue-dark); }
+  .fv-catch .price-hl {
+    color: var(--docomo-red);
+    font-size: 34px;
+  }
+
+  .fv-sub {
+    font-size: 14px;
+    font-weight: 700;
+    color: var(--ink-soft);
+    line-height: 1.9;
+    margin-bottom: 20px;
+  }
+  .fv-sub .u {
+    background: linear-gradient(transparent 65%, #ffe600 65%);
+    color: var(--ink);
+    padding: 0 1px;
+  }
+
+  /* ChargeSPOTヒーローカード（写真＋青系） */
+  .fv-hero-card {
+    background: linear-gradient(160deg, #e6f7fd 0%, #d0f0fa 100%);
+    border: 2px solid var(--charge-blue);
+    border-radius: 16px;
+    overflow: hidden;
+    margin-bottom: 16px;
+    text-align: left;
+  }
+  .fv-hero-photo {
+    display: block;
+    width: 100%;
+    height: auto;
+    aspect-ratio: 16 / 10;
+    object-fit: cover;
+  }
+  .fv-hero-text {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    padding: 14px 16px;
+  }
+  .fv-hero-visual {
+    flex: 0 0 26%;
+    max-width: 96px;
+  }
+  .fv-hero-visual img { width: 100%; height: auto; display: block; }
+  .fv-hero-body { flex: 1; min-width: 0; }
+  .fv-hero-headline {
+    font-family: 'Zen Kaku Gothic New', sans-serif;
+    font-weight: 900;
+    font-size: 20px;
+    line-height: 1.35;
+    color: var(--ink);
+    margin-bottom: 4px;
+  }
+  .fv-hero-headline .brand { color: var(--charge-blue-dark); }
+  .fv-hero-desc {
+    font-size: 12px;
+    font-weight: 500;
+    color: var(--ink-soft);
+    line-height: 1.7;
+  }
+
+  .fv-price-block {
+    background: white;
+    border-radius: 14px;
+    padding: 16px 16px 14px;
+    margin-bottom: 14px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+    text-align: center;
+  }
+  .fv-price-row {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    margin-bottom: 10px;
+    flex-wrap: wrap;
+  }
+  .fv-price-label {
+    font-size: 14px;
+    font-weight: 900;
+    color: var(--docomo-red);
+    border: 2px solid var(--docomo-red);
+    border-radius: 6px;
+    padding: 6px 8px;
+    line-height: 1;
+    white-space: nowrap;
+  }
+  .fv-price-num {
+    font-family: 'Anton', sans-serif;
+    font-size: 52px;
+    font-weight: 900;
+    color: var(--docomo-red);
+    line-height: 1;
+    letter-spacing: 0.04em;
+  }
+  .fv-price-yen { font-size: 20px; font-weight: 900; color: var(--docomo-red); }
+  .fv-price-tax { font-size: 11px; font-weight: 700; color: var(--docomo-red); white-space: nowrap; }
+  .fv-free-ribbon {
+    display: inline-block;
+    background: var(--docomo-red);
+    color: white;
+    font-weight: 900;
+    font-size: 15px;
+    padding: 8px 22px;
+    border-radius: 999px;
+    letter-spacing: 0.08em;
+  }
+
+  .fv-cond {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    align-items: center;
+    margin-bottom: 16px;
+  }
+  .fv-cond-chip {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    background: white;
+    border: 1.5px solid var(--border);
+    border-radius: 999px;
+    padding: 7px 16px;
+    font-size: 12px;
+    font-weight: 700;
+    color: var(--ink);
+  }
+  .fv-cond-chip .check { color: var(--docomo-red); font-weight: 900; }
+
+  .fv-3icons {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 8px;
+    margin-bottom: 12px;
+  }
+  .fv-3icon {
+    background: white;
+    border-radius: 10px;
+    padding: 12px 6px 10px;
+    text-align: center;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 6px;
+    border-top: 3px solid;
+  }
+  .fv-3icon.movie { border-top-color: #1a4d8f; }
+  .fv-3icon.karaoke { border-top-color: #8e24aa; }
+  .fv-3icon.ai { border-top-color: #2e7d32; }
+  .fv-3icon-emoji { font-size: 26px; line-height: 1; }
+  .fv-3icon-label {
+    font-size: 11px;
+    font-weight: 700;
+    color: var(--ink);
+    line-height: 1.3;
+  }
+  .fv-3icon-num {
+    font-family: 'Zen Kaku Gothic New', sans-serif;
+    font-size: 13px;
+    font-weight: 900;
+    line-height: 1;
+    margin-top: 2px;
+  }
+  .fv-3icon.movie .fv-3icon-num { color: #1a4d8f; }
+  .fv-3icon.karaoke .fv-3icon-num { color: #8e24aa; }
+  .fv-3icon.ai .fv-3icon-num { color: #2e7d32; }
+
+  .fv-airtri {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    background: white;
+    border: 1.5px solid #1a4d8f;
+    border-radius: 10px;
+    padding: 10px 12px;
+    font-size: 13px;
+    font-weight: 700;
+    color: var(--ink);
+    margin-bottom: 20px;
+    flex-wrap: wrap;
+  }
+  .fv-airtri .hl { color: #1a4d8f; font-weight: 900; }
+
+  .fv-cta {
+    display: block;
+    background: linear-gradient(180deg, var(--docomo-red) 0%, var(--docomo-red-dark) 100%);
+    color: white;
+    text-align: center;
+    padding: 18px;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: 900;
+    font-size: 18px;
+    letter-spacing: 0.08em;
+    box-shadow: 0 6px 20px rgba(204,0,51,0.35);
+    margin-bottom: 12px;
+  }
+  .fv-cta-note {
+    font-size: 10px;
+    color: #777;
+    line-height: 1.6;
+    text-align: left;
+  }
+
+  /* ============ 実質2ヶ月無料バンド（FV直下） ============ */
+  .entry-band {
+    background: var(--paper-alt);
+    padding: 28px 20px;
+    text-align: center;
+  }
+  .entry-band-head {
+    font-size: 15px;
+    font-weight: 900;
+    color: var(--docomo-red);
+    margin-bottom: 12px;
+    letter-spacing: 0.04em;
+  }
+  .entry-card {
+    background: white;
+    border: 2px solid var(--docomo-red);
+    border-radius: 14px;
+    padding: 16px;
+  }
+  .entry-tag {
+    display: inline-block;
+    border: 1.5px solid var(--docomo-red);
+    border-radius: 20px;
+    padding: 2px 12px;
+    font-size: 11px;
+    font-weight: 700;
+    color: var(--docomo-red);
+    margin-bottom: 8px;
+  }
+  .entry-num { font-size: 48px; font-weight: 900; color: var(--docomo-red); line-height: 1; font-family: 'Zen Kaku Gothic New', sans-serif; }
+  .entry-text { font-size: 18px; font-weight: 900; color: var(--docomo-red); }
+  .entry-detail {
+    font-size: 11px;
+    color: var(--ink-soft);
+    margin-top: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 3px;
+    flex-wrap: wrap;
+  }
+  .pt-icon {
+    background: #d4a017;
+    color: white;
+    border-radius: 50%;
+    width: 16px;
+    height: 16px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 9px;
+    font-weight: 900;
+  }
+  .entry-note {
+    font-size: 10px;
+    color: #777;
+    line-height: 1.6;
+    margin-top: 12px;
+    text-align: left;
+  }
+  .entry-link { color: var(--docomo-red); font-size: 13px; font-weight: 700; }
+
+  /* ============ BATTERY ============ */
+  .battery { background: white; }
+  .battery-service-desc { font-size: 12px; color: #666; margin: 6px 0 0; }
+  .battery-visual-row {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+    margin: 16px 0;
+  }
+  .battery-visual { flex: 0 0 35%; max-width: 35%; }
+  .battery-visual img { width: 100%; height: auto; display: block; }
+  .battery-chips { flex: 1; display: flex; flex-direction: column; gap: 10px; }
+  .battery-chip {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 13px;
+    font-weight: 700;
+    color: var(--ink);
+    border: 1.5px solid var(--charge-blue);
+    border-radius: 8px;
+    padding: 6px 12px;
+  }
+  .battery-chip .emoji { font-size: 18px; }
+  .battery-calc {
+    background: #fff8e6;
+    border-left: 4px solid #f0a500;
+    border-radius: 8px;
+    padding: 14px 16px;
+    margin-bottom: 16px;
+  }
+  .battery-calc-head {
+    font-family: 'Zen Kaku Gothic New', sans-serif;
+    font-size: 15px;
+    font-weight: 900;
+    line-height: 1.7;
+  }
+  .battery-calc-head .hl2 { color: var(--docomo-red); font-size: 19px; }
+  .battery-calc-sub { font-size: 12px; font-weight: 600; color: #555; }
+
+  .price-table {
+    background: white;
+    color: var(--ink);
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: var(--shadow-strong);
+    margin-bottom: 12px;
+  }
+  .price-table caption {
+    text-align: left;
+    font-size: 0;
+    height: 0;
+    overflow: hidden;
+  }
+  .price-table-head {
+    display: grid;
+    grid-template-columns: 1.3fr 1fr 1fr;
+    background: #f5f5f5;
+    padding: 14px 16px;
+    font-size: 11px;
+    font-weight: 700;
+    color: var(--ink-soft);
+  }
+  .price-table-head div:nth-child(2) { text-align: center; }
+  .price-table-head div:nth-child(3) { text-align: center; color: var(--docomo-red); }
+  .price-row {
+    display: grid;
+    grid-template-columns: 1.3fr 1fr 1fr;
+    padding: 8px 16px;
+    border-top: 1px solid var(--border);
+    align-items: center;
+    font-size: 15px;
+  }
+  .price-row.highlight { background: #fff8e6; }
+  .price-row .time { font-weight: 500; }
+  .price-row .normal { text-align: center; color: #767676; }
+  .price-row .member {
+    text-align: center;
+    font-family: var(--font-display);
+    font-size: 22px;
+    color: var(--docomo-red);
+    font-weight: 700;
+  }
+  .battery-student-line {
+    font-size: 14px;
+    font-weight: 700;
+    color: var(--ink);
+    text-align: center;
+    margin-bottom: 10px;
+    line-height: 1.8;
+  }
+  .battery-note { font-size: 10px; color: #777; line-height: 1.6; }
+
+  /* ============ SIMULATION ============ */
+  .sim { background: var(--paper-alt); }
+  .sim-type-card {
+    background: white;
+    border-radius: 14px;
+    box-shadow: var(--shadow);
+    overflow: hidden;
+    margin-bottom: 18px;
+  }
+  .sim-type-head {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 14px 18px;
+    color: white;
+    font-family: 'Zen Kaku Gothic New', sans-serif;
+    font-weight: 900;
+    font-size: 15px;
+    line-height: 1.4;
+  }
+  .sim-type-head.typea { background: linear-gradient(135deg, #0077b6 0%, #00b4d8 100%); }
+  .sim-type-head.typeb { background: linear-gradient(135deg, #8e24aa 0%, #c2185b 100%); }
+  .sim-type-tag {
+    flex-shrink: 0;
+    background: white;
+    border-radius: 6px;
+    padding: 3px 8px;
+    font-size: 12px;
+    font-weight: 900;
+  }
+  .sim-type-head.typea .sim-type-tag { color: #0077b6; }
+  .sim-type-head.typeb .sim-type-tag { color: #8e24aa; }
+  .sim-items { padding: 6px 18px; }
+  .sim-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: 12px;
+    padding: 12px 0;
+    border-bottom: 1px dashed var(--border);
+  }
+  .sim-item:last-child { border-bottom: none; }
+  .sim-item-name { font-size: 13px; font-weight: 700; line-height: 1.5; }
+  .sim-item-name .sub { display: block; font-size: 11px; font-weight: 500; color: var(--ink-soft); }
+  .sim-item-val {
+    flex-shrink: 0;
+    font-family: 'Zen Kaku Gothic New', sans-serif;
+    font-size: 16px;
+    font-weight: 900;
+    color: var(--docomo-red);
+    white-space: nowrap;
+  }
+  .sim-total {
+    background: #fff8e6;
+    text-align: center;
+    padding: 12px;
+    font-family: 'Zen Kaku Gothic New', sans-serif;
+    font-weight: 900;
+    font-size: 15px;
+  }
+  .sim-total .num { font-size: 28px; color: var(--docomo-red); margin: 0 2px; }
+  .sim-killer {
+    background: var(--ink);
+    color: white;
+    border-radius: 14px;
+    padding: 20px 18px;
+    text-align: center;
+    font-family: 'Zen Kaku Gothic New', sans-serif;
+    font-weight: 900;
+    font-size: 17px;
+    line-height: 1.7;
+    margin-bottom: 14px;
+  }
+  .sim-killer .hl { color: var(--accent-yellow); }
+  .sim-extra {
+    text-align: center;
+    font-size: 13px;
+    font-weight: 700;
+    color: var(--ink);
+    background: white;
+    border: 1.5px dashed #2e7d32;
+    border-radius: 10px;
+    padding: 10px 14px;
+    margin-bottom: 12px;
+  }
+  .sim-extra .hl { color: #2e7d32; }
+  .sim-note { font-size: 10px; color: #777; line-height: 1.6; }
+
+  /* ============ COUPON (学生向け5ブロック) ============ */
+  .coupon-section { background: white; }
+  .coupon-card {
+    background: white;
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    box-shadow: var(--shadow);
+    overflow: hidden;
+    margin-bottom: 18px;
+  }
+  .coupon-head {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 13px 18px;
+    color: white;
+    font-family: 'Zen Kaku Gothic New', sans-serif;
+    font-weight: 900;
+    font-size: 16px;
+  }
+  .coupon-head.movie { background: #1a4d8f; }
+  .coupon-head.karaoke { background: #8e24aa; }
+  .coupon-head.conbini { background: #2e7d32; }
+  .coupon-head.gohan { background: #e65100; }
+  .coupon-head.more { background: #616161; }
+  .coupon-head .emoji { font-size: 22px; }
+  .coupon-head .amount {
+    margin-left: auto;
+    background: rgba(255,255,255,0.95);
+    border-radius: 6px;
+    padding: 2px 10px;
+    font-size: 13px;
+    white-space: nowrap;
+  }
+  .coupon-head.movie .amount { color: #1a4d8f; }
+  .coupon-head.karaoke .amount { color: #8e24aa; }
+  .coupon-head.conbini .amount { color: #2e7d32; }
+  .coupon-head.gohan .amount { color: #e65100; }
+  .coupon-body { padding: 16px 18px; }
+  .coupon-brands {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    margin-bottom: 10px;
+  }
+  .coupon-brand {
+    background: #f5f6f8;
+    border-radius: 999px;
+    padding: 4px 12px;
+    font-size: 12px;
+    font-weight: 700;
+    color: var(--ink);
+    white-space: nowrap;
+  }
+  .coupon-brand .off { color: var(--docomo-red); font-weight: 900; }
+  .coupon-copy { font-size: 13px; color: var(--ink-soft); line-height: 1.8; }
+  .coupon-copy strong { color: var(--ink); }
+  .coupon-note-inline { font-size: 10px; color: #777; margin-top: 6px; line-height: 1.6; }
+
+  .kanji-block {
+    background: linear-gradient(160deg, #fff4e6 0%, #ffe8cc 100%);
+    border: 1.5px solid #e65100;
+    border-radius: 10px;
+    padding: 14px;
+    margin-top: 12px;
+  }
+  .kanji-title {
+    font-family: 'Zen Kaku Gothic New', sans-serif;
+    font-size: 15px;
+    font-weight: 900;
+    color: var(--ink);
+    margin-bottom: 8px;
+    line-height: 1.5;
+  }
+  .kanji-title .hl { color: #e65100; }
+  .kanji-math {
+    background: white;
+    border-radius: 8px;
+    padding: 10px 12px;
+    text-align: center;
+    font-family: 'Zen Kaku Gothic New', sans-serif;
+    font-weight: 900;
+    font-size: 14px;
+    margin: 10px 0;
+  }
+  .kanji-math .num { font-size: 22px; color: var(--docomo-red); }
+
+  .coupon-section-note { font-size: 10px; color: #777; line-height: 1.6; }
+
+  /* ============ dポイント ============ */
+  .dpoint { background: var(--paper-alt); }
+  .dpoint-list { display: grid; gap: 12px; margin-bottom: 12px; }
+  .dpoint-item {
+    background: white;
+    border-radius: 12px;
+    padding: 14px 16px;
+    box-shadow: var(--shadow);
+  }
+  .dpoint-item-title {
+    font-family: 'Zen Kaku Gothic New', sans-serif;
+    font-size: 14px;
+    font-weight: 900;
+    margin-bottom: 4px;
+  }
+  .dpoint-item-title .hl { color: var(--docomo-red); }
+  .dpoint-item-text { font-size: 12px; color: var(--ink-soft); line-height: 1.8; }
+  .dpoint-note { font-size: 10px; color: #777; line-height: 1.6; }
+
+  /* ============ ぜろからAI ============ */
+  .zerokara { background: linear-gradient(180deg, #eef7ee 0%, #e2f0e2 100%); }
+  .zerokara .section-label { color: #2e7d32; }
+  .zerokara .section-label::before { background: #2e7d32; }
+  .zerokara-card {
+    background: white;
+    border-radius: 14px;
+    padding: 20px 18px;
+    box-shadow: var(--shadow);
+    margin-bottom: 14px;
+  }
+  .zerokara-name {
+    display: inline-block;
+    background: #2e7d32;
+    color: white;
+    font-family: 'Zen Kaku Gothic New', sans-serif;
+    font-weight: 900;
+    font-size: 15px;
+    padding: 4px 14px;
+    border-radius: 8px;
+    margin-bottom: 12px;
+  }
+  .zerokara-copy { font-size: 14px; line-height: 2; color: var(--ink); }
+  .zerokara-copy .u {
+    background: linear-gradient(transparent 65%, #c8e6c9 65%);
+    font-weight: 700;
+  }
+  .apps-extra {
+    font-size: 12px;
+    color: var(--ink-soft);
+    line-height: 1.8;
+    background: white;
+    border-radius: 10px;
+    padding: 12px 14px;
+  }
+  .apps-extra strong { color: var(--ink); }
+
+  /* ============ エアトリ ============ */
+  .airtri { background: white; }
+  .airtri .section-label { color: #1a4d8f; }
+  .airtri .section-label::before { background: #1a4d8f; }
+  .airtri-hero {
+    background: linear-gradient(160deg, #e8f0fb 0%, #d5e5f7 100%);
+    border: 2px solid #1a4d8f;
+    border-radius: 14px;
+    padding: 20px 18px;
+    text-align: center;
+    margin-bottom: 12px;
+  }
+  .airtri-amount {
+    font-family: 'Zen Kaku Gothic New', sans-serif;
+    font-weight: 900;
+    font-size: 17px;
+    line-height: 1.5;
+    margin-bottom: 10px;
+  }
+  .airtri-amount .num { font-size: 34px; color: #1a4d8f; }
+  .airtri-scenes {
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+    flex-wrap: wrap;
+    margin-bottom: 10px;
+  }
+  .airtri-scene {
+    background: white;
+    border-radius: 999px;
+    padding: 5px 14px;
+    font-size: 12px;
+    font-weight: 700;
+    color: #1a4d8f;
+  }
+  .airtri-copy { font-size: 13px; color: var(--ink-soft); line-height: 1.8; text-align: left; }
+  .airtri-note { font-size: 10px; color: #777; line-height: 1.6; }
+
+  /* ============ dアカウント ============ */
+  .daccount { background: var(--paper-alt); }
+  .daccount-card {
+    background: white;
+    border-radius: 14px;
+    padding: 20px 18px;
+    box-shadow: var(--shadow);
+  }
+  .daccount-carriers {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    margin: 12px 0;
+  }
+  .daccount-carrier {
+    background: #f5f6f8;
+    border-radius: 999px;
+    padding: 4px 14px;
+    font-size: 12px;
+    font-weight: 700;
+  }
+  .daccount-copy { font-size: 14px; line-height: 2; color: var(--ink); }
+  .daccount-copy .hl { color: var(--docomo-red); font-weight: 900; }
+
+  /* ============ CAMPAIGN ============ */
+  .campaign { background: var(--docomo-red-dark); }
+  .campaign .section-label { color: var(--accent-yellow); }
+  .campaign .section-label::before { background: var(--accent-yellow); }
+  .camp-hero {
+    background: var(--docomo-red);
+    border-radius: 14px;
+    padding: 24px 20px 20px;
+    position: relative;
+    margin-top: 8px;
+  }
+  .camp-hero-base {
+    text-align: center;
+    font-family: 'Zen Kaku Gothic New', sans-serif;
+    font-weight: 900;
+    font-size: 22px;
+    color: white;
+    line-height: 1.2;
+    margin-bottom: 6px;
+  }
+  .camp-hero-base .hl-num {
+    font-size: 48px;
+    color: #ffe600;
+    -webkit-text-stroke: 2px #000;
+    vertical-align: -6px;
+    margin: 0 2px;
+  }
+  .camp-hero-base .ast { font-size: 14px; vertical-align: super; }
+  .camp-hero-base-note {
+    font-size: 10px;
+    color: rgba(255,255,255,0.85);
+    margin-bottom: 16px;
+    line-height: 1.5;
+    border-left: 2px solid #ffe600;
+    padding-left: 8px;
+    text-align: left;
+  }
+  .camp-divider {
+    text-align: center;
+    font-size: 13px;
+    font-weight: 700;
+    color: #ffe600;
+    margin-bottom: 12px;
+    letter-spacing: 0.05em;
+  }
+  .camp-twin { display: flex; gap: 10px; margin: 12px 0; }
+  .camp-twin-card {
+    flex: 1;
+    background: #f9e8e8;
+    border-radius: 12px;
+    padding: 12px 8px;
+    text-align: center;
+  }
+  .camp-twin-tag {
+    display: inline-block;
+    border: 1.5px solid var(--docomo-red);
+    border-radius: 20px;
+    padding: 2px 10px;
+    font-size: 10px;
+    font-weight: 700;
+    color: var(--docomo-red);
+    margin-bottom: 8px;
+  }
+  .camp-twin-num { font-size: 44px; font-weight: 900; line-height: 1; font-family: 'Zen Kaku Gothic New', sans-serif; }
+  .camp-twin-text { font-size: 16px; font-weight: 900; }
+  .camp-twin-card.two .camp-twin-num, .camp-twin-card.two .camp-twin-text { color: var(--docomo-red); }
+  .camp-twin-card.three .camp-twin-num, .camp-twin-card.three .camp-twin-text { color: #c8960c; }
+  .camp-twin-detail {
+    font-size: 10px;
+    color: #555;
+    margin-top: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 3px;
+    flex-wrap: wrap;
+  }
+  .camp-hero-meta { margin-top: 8px; }
+  .camp-hero-plans { font-size: 11px; color: rgba(255,255,255,0.9); font-weight: 700; margin-bottom: 6px; }
+  .camp-hero-note { font-size: 10px; color: rgba(255,255,255,0.8); line-height: 1.7; }
+  .camp-cond {
+    background: white;
+    color: var(--ink);
+    border-radius: 10px;
+    padding: 12px 16px;
+    text-align: center;
+    font-size: 14px;
+    margin-top: 14px;
+  }
+  .camp-entry-link {
+    display: block;
+    text-align: center;
+    margin-top: 12px;
+    color: white;
+    font-size: 15px;
+    font-weight: 700;
+    text-decoration: underline;
+    letter-spacing: 0.02em;
+  }
+
+  /* ============ FAQ ============ */
+  .faq { background: var(--paper-alt); }
+  .faq-list { margin-top: 24px; }
+  .faq-item {
+    background: white;
+    border-radius: 8px;
+    margin-bottom: 12px;
+    overflow: hidden;
+  }
+  .faq-q {
+    width: 100%;
+    background: none;
+    border: none;
+    font-family: var(--font-jp-body);
+    text-align: left;
+    padding: 18px 20px;
+    font-weight: 700;
+    font-size: 14px;
+    color: var(--ink);
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    min-height: 44px;
+    line-height: 1.6;
+  }
+  .faq-q::before {
+    content: 'Q.';
+    color: var(--docomo-red);
+    font-family: var(--font-display);
+    font-size: 18px;
+    margin-right: 10px;
+  }
+  .faq-q span { flex: 1; }
+  .faq-q::after {
+    content: '+';
+    font-size: 22px;
+    color: var(--docomo-red);
+    transition: transform 0.3s;
+    margin-left: 8px;
+  }
+  .faq-q[aria-expanded="true"]::after { transform: rotate(45deg); }
+  .faq-a {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s, padding 0.3s;
+    padding: 0 20px;
+    font-size: 15px;
+    color: var(--ink-soft);
+    line-height: 1.8;
+  }
+  .faq-item.open .faq-a {
+    max-height: 400px;
+    padding: 0 20px 20px;
+  }
+  .faq-group-label {
+    font-size: 13px;
+    font-weight: 900;
+    color: var(--docomo-red);
+    margin: 28px 0 0;
+  }
+  .faq-group-label:first-of-type { margin-top: 20px; }
+
+  /* ============ CLOSING ============ */
+  .closing {
+    background: #f5f6f8;
+    text-align: center;
+  }
+  .closing-copy {
+    font-family: 'Zen Kaku Gothic New', sans-serif;
+    font-weight: 900;
+    font-size: 15px;
+    line-height: 1.8;
+    margin-bottom: 6px;
+  }
+  .closing-main {
+    font-family: 'Zen Kaku Gothic New', sans-serif;
+    font-weight: 900;
+    font-size: 22px;
+    line-height: 1.6;
+    margin-bottom: 20px;
+  }
+  .closing-main .hl { color: var(--docomo-red); }
+
+  /* ============ FOOTER ============ */
+  .footer-links {
+    background: #f5f6f8;
+    border-top: 1px solid var(--border);
+  }
+  .footer-link-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 13px 20px;
+    border-bottom: 1px solid var(--border);
+    text-decoration: none;
+    color: var(--ink);
+    font-size: 13px;
+  }
+  .footer-link-item:last-child { border-bottom: none; }
+  .footer-link-item::after {
+    content: '›';
+    font-size: 20px;
+    color: #767676;
+    flex-shrink: 0;
+    margin-left: 8px;
+  }
+  footer {
+    background: #6b6b6b;
+    color: white;
+    padding: 18px 24px;
+    text-align: center;
+  }
+  .footer-company { font-size: 13px; opacity: 0.9; }
+
+  /* ============ STICKY CTA ============ */
+  .sticky-cta {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: white;
+    padding: 12px 16px;
+    box-shadow: 0 -4px 20px rgba(0,0,0,0.1);
+    z-index: 100;
+    max-width: 480px;
+    margin: 0 auto;
+    transform: translateY(100%);
+    transition: transform 0.3s;
+  }
+  .sticky-cta.show { transform: translateY(0); }
+  .sticky-cta a {
+    display: block;
+    background: var(--docomo-red);
+    color: white;
+    text-align: center;
+    padding: 14px;
+    border-radius: 6px;
+    text-decoration: none;
+    font-weight: 900;
+    font-size: 15px;
+  }
+  .sticky-note {
+    font-size: 10px;
+    color: #666;
+    text-align: center;
+    margin-top: 6px;
+    line-height: 1.5;
+  }
+  .spacer { height: 110px; }
+
+  /* ============ MODAL ============ */
+  .modal-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.55);
+    z-index: 1000;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    padding: 16px;
+  }
+  .modal-overlay.open { display: flex; }
+  .modal-inner {
+    background: white;
+    width: 100%;
+    max-width: 400px;
+    border-radius: 12px;
+    overflow: hidden;
+    position: relative;
+    max-height: 92vh;
+    overflow-y: auto;
+    box-shadow: 0 8px 32px rgba(0,0,0,0.3);
+  }
+  .modal-head {
+    background: linear-gradient(180deg, #29b6f6 0%, #26c6da 100%);
+    padding: 12px 16px;
+  }
+  .modal-head-title { text-align: center; margin-bottom: 16px; }
+  .modal-head-title p { font-size: 15px; font-weight: 700; color: white; margin: 0 0 8px; }
+  .modal-head-title .brand-chip {
+    background: white;
+    color: #e60012;
+    font-weight: 900;
+    padding: 2px 10px;
+    border-radius: 4px;
+    border: 2px solid #e60012;
+  }
+  .modal-sep { border-top: 1px solid rgba(255,255,255,0.4); margin: 14px 0 12px; }
+  .modal-caution { font-size: 13px; color: white; font-weight: 700; margin: 0 0 6px; text-align: center; }
+  .modal-caution .dot-u { border-bottom: 3px dotted #e60012; }
+  .modal-daccount { padding: 14px 16px; }
+  .modal-daccount-head { font-size: 13px; font-weight: 700; color: #333; margin: 0 0 10px; }
+  .modal-daccount-head .warn { color: #e60012; font-weight: 900; font-size: 15px; }
+  .modal-daccount p { font-size: 13px; color: #333; line-height: 1.8; margin-bottom: 10px; }
+  .modal-daccount .small { font-size: 11px; color: #777; line-height: 1.6; margin-bottom: 5px; }
+  .modal-daccount .small.red { color: #e60012; font-weight: 700; }
+  .modal-daccount a { color: #e60012; text-decoration: none; font-weight: 700; border-bottom: 2px solid #e60012; }
+  .modal-cta-wrap {
+    padding: 16px 16px 20px;
+    background: linear-gradient(180deg, #e60012 0%, #c0000e 100%);
+  }
+  .modal-cta {
+    display: block;
+    color: #e60012;
+    text-align: center;
+    padding: 16px;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: 900;
+    font-size: 17px;
+    letter-spacing: 0.08em;
+    background: white;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.25);
+  }
+  .modal-cta-note {
+    font-size: 10px;
+    color: rgba(255,255,255,0.85);
+    text-align: center;
+    margin-top: 10px;
+    line-height: 1.5;
+  }
+  .modal-close {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: white;
+    border: none;
+    color: #e60012;
+    font-size: 18px;
+    font-weight: 900;
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+  }
+
+  /* ============ RESPONSIVE (WCAG 1.4.10 リフロー：320px幅対応) ============ */
+  @media (min-width: 481px) {
+    .container { box-shadow: 0 0 60px rgba(0,0,0,0.1); }
+  }
+  @media (max-width: 400px) {
+    .fv-catch .line1, .fv-catch .line2 { font-size: 23px; }
+    .fv-catch .price-hl { font-size: 29px; }
+    .fv-hero-headline { font-size: 17px; }
+    .fv-price-num { font-size: 44px; }
+    .camp-hero-base { font-size: 19px; }
+    .camp-hero-base .hl-num { font-size: 40px; }
+    .camp-twin-num { font-size: 36px; }
+    .camp-twin-text { font-size: 14px; }
+    .section-title { font-size: 22px; }
+  }
+  @media (max-width: 340px) {
+    section { padding: 44px 16px; }
+    .fv { padding: 20px 14px 32px; }
+    .fv-catch .line1, .fv-catch .line2 { font-size: 20px; }
+    .fv-catch .price-hl { font-size: 25px; }
+    .fv-price-num { font-size: 38px; }
+    .fv-3icons { gap: 5px; }
+    .entry-num { font-size: 40px; }
+    .price-row { padding: 8px 10px; font-size: 13px; }
+    .price-table-head { padding: 12px 10px; }
+    .price-row .member { font-size: 18px; }
+    .camp-twin { flex-direction: column; }
+    .sim-item-val { font-size: 14px; }
+    .battery-visual-row { flex-direction: column; }
+    .battery-visual { max-width: 50%; flex-basis: auto; }
+  }
+</style>
+</head>
+<body>
+
+<div class="container">
+
+  <!-- ============ FIRST VIEW ============ -->
+  <header class="fv">
+    <p class="fv-brand"><img src="images/dvp_logo.png" alt="dバリューパス" class="fv-brand-logo"></p>
+
+    <p class="fv-badge">大学生必見！</p>
+
+    <h1 class="fv-catch">
+      <span class="line1"><span class="hl">ChargeSPOT</span>が借り放題、</span>
+      <span class="line2">月<span class="price-hl">550</span>円。</span>
+    </h1>
+
+    <p class="fv-sub">
+      1回（3時間〜）借りれば、<span class="u">ほぼ元が取れる。</span><br>
+      映画500円OFF・カラオケ最大30%OFFもついてくる。
+    </p>
+
+    <!-- ChargeSPOTヒーローカード -->
+    <div class="fv-hero-card">
+      <img src="images/fv_main.jpg" alt="キャンパスを歩く大学生" class="fv-hero-photo">
+      <div class="fv-hero-text">
+        <div class="fv-hero-visual">
+          <!-- 【要差替】mobilebattery.png（既存LPと同一アセット） -->
+          <img src="images/mobilebattery.png" alt="ChargeSPOTのモバイルバッテリー端末">
+        </div>
+        <div class="fv-hero-body">
+          <p class="fv-hero-headline"><span class="brand">ChargeSPOT</span>が<br>借り放題。</p>
+          <p class="fv-hero-desc">授業、バイト、そのまま遊びに。1日外にいても、充電切れの不安ゼロ。</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- 価格ブロック -->
+    <div class="fv-price-block">
+      <div class="fv-price-row">
+        <span class="fv-price-label">月額</span>
+        <span class="fv-price-num">550</span>
+        <span class="fv-price-yen">円</span>
+        <span class="fv-price-tax">(税込)</span>
+      </div>
+      <span class="fv-free-ribbon">初回31日間無料</span>
+    </div>
+
+    <!-- 条件チップ -->
+    <div class="fv-cond">
+      <span class="fv-cond-chip"><span class="check">✓</span>ドコモ回線をお持ちでない方もOK</span>
+      <span class="fv-cond-chip"><span class="check">✓</span>dアカウントは無料でつくれます</span>
+    </div>
+
+    <!-- 特典3アイコン -->
+    <div class="fv-3icons">
+      <div class="fv-3icon movie">
+        <span class="fv-3icon-emoji" aria-hidden="true">🎬</span>
+        <span class="fv-3icon-label">映画が<br>お得</span>
+        <span class="fv-3icon-num">最大500円OFF</span>
+      </div>
+      <div class="fv-3icon karaoke">
+        <span class="fv-3icon-emoji" aria-hidden="true">🎤</span>
+        <span class="fv-3icon-label">カラオケ<br>割引</span>
+        <span class="fv-3icon-num">最大30%OFF</span>
+      </div>
+      <div class="fv-3icon ai">
+        <span class="fv-3icon-emoji" aria-hidden="true">📚</span>
+        <span class="fv-3icon-label">AI教材<br>使い放題</span>
+        <span class="fv-3icon-num">ぜろからAI</span>
+      </div>
+    </div>
+
+    <!-- エアトリ帯 -->
+    <p class="fv-airtri"><span aria-hidden="true">✈️</span>帰省・卒業旅行に　エアトリで<span class="hl">最大40,000円OFF</span></p>
+
+    <a href="#" class="fv-cta js-open-modal">今すぐ申し込む ▶</a>
+    <p class="fv-cta-note">初回31日間無料 ※31日経過後は自動継続となり、ドコモ以外の方はその月から1カ月分の料金（月額税込550円）がかかります。</p>
+  </header>
+
+  <main>
+
+  <!-- ============ 実質2ヶ月無料バンド ============ -->
+  <section class="entry-band" aria-labelledby="entry-band-head">
+    <p class="entry-band-head" id="entry-band-head">＼ さらにエントリーで実質2ヶ月無料！ ／</p>
+    <div class="entry-card">
+      <span class="entry-tag">誰でも</span>
+      <div>
+        <span class="entry-num">2</span><span class="entry-text">カ月実質無料</span>
+      </div>
+      <div class="entry-detail">
+        初回31日間無料 ＋
+        <span style="display:inline-flex; align-items:center; gap:2px;">
+          <span class="pt-icon" aria-hidden="true">P</span>
+          <span style="font-weight:700;">550pt</span>
+        </span>
+      </div>
+    </div>
+    <p class="entry-note">要エントリー／還元はdポイント(期間・用途限定)。<a class="entry-link" href="#faq-entry">エントリー方法はこちら ▼</a></p>
+  </section>
+
+  <!-- ============ BATTERY ============ -->
+  <section class="battery" aria-labelledby="battery-label">
+    <span class="section-label" id="battery-label">人気のChargeSPOTが借り放題</span>
+    <p class="battery-service-desc">ChargeSPOTはモバイルバッテリーのレンタルサービスです。</p>
+
+    <div class="battery-visual-row">
+      <div class="battery-visual">
+        <!-- 【要差替】既存LPと同一アセット -->
+        <img src="images/mobilebattery.png" alt="ChargeSPOTのモバイルバッテリー端末">
+      </div>
+      <div class="battery-chips">
+        <span class="battery-chip"><span class="emoji" aria-hidden="true">📍</span>全国約5万5,000台</span>
+        <span class="battery-chip"><span class="emoji" aria-hidden="true">♾️</span>何度でも0円</span>
+        <span class="battery-chip"><span class="emoji" aria-hidden="true">👑</span>ドコモ独占</span>
+      </div>
+    </div>
+
+    <div class="battery-calc">
+      <p class="battery-calc-head">6時間以上のレンタルで<br><span class="hl2">月額550円の元が取れる！</span><br><span class="battery-calc-sub">何度でも0円だから気兼ねなく借りれます。</span></p>
+    </div>
+
+    <div class="price-table" role="table" aria-label="ChargeSPOT利用料金の比較表">
+      <div class="price-table-head" role="row">
+        <div role="columnheader">利用時間</div>
+        <div role="columnheader">通常料金</div>
+        <div role="columnheader">dバリューパス</div>
+      </div>
+      <div class="price-row" role="row"><div class="time" role="cell">〜30分</div><div class="normal" role="cell">165円</div><div class="member" role="cell">0円</div></div>
+      <div class="price-row" role="row"><div class="time" role="cell">30分〜1時間</div><div class="normal" role="cell">330円</div><div class="member" role="cell">0円</div></div>
+      <div class="price-row" role="row"><div class="time" role="cell">1〜3時間</div><div class="normal" role="cell">430円</div><div class="member" role="cell">0円</div></div>
+      <div class="price-row" role="row"><div class="time" role="cell">3〜6時間</div><div class="normal" role="cell">500円</div><div class="member" role="cell">0円</div></div>
+      <div class="price-row highlight" role="row"><div class="time" role="cell">6〜12時間</div><div class="normal" role="cell">570円</div><div class="member" role="cell">0円</div></div>
+      <div class="price-row highlight" role="row"><div class="time" role="cell">12〜24時間</div><div class="normal" role="cell">640円</div><div class="member" role="cell">0円</div></div>
+    </div>
+
+    <p class="battery-student-line">1限からバイト終わりまで外にいる日も、<br>これで充電切れの心配なし。</p>
+
+    <p class="battery-note">※一部のテーマパーク、スタジアム、大学、医療機関など、通常とは異なる料金が設定されている場所では、使い放題が適用されません。</p>
+  </section>
+
+  <!-- ============ SIMULATION ============ -->
+  <section class="sim" aria-labelledby="sim-title">
+    <span class="section-label">1日のお得シミュレーション</span>
+    <h2 class="section-title" id="sim-title">550円、<span class="accent">1日で元が取れる？</span></h2>
+
+    <!-- TYPE A -->
+    <div class="sim-type-card">
+      <div class="sim-type-head typea">
+        <span class="sim-type-tag">TYPE A</span>
+        授業もバイトもある、<br>1日外にいる日
+      </div>
+      <div class="sim-items">
+        <div class="sim-item">
+          <p class="sim-item-name">朝から夜までChargeSPOT<span class="sub">6〜12時間レンタル 570円 → 0円</span></p>
+          <span class="sim-item-val">570円</span>
+        </div>
+        <div class="sim-item">
+          <p class="sim-item-name">夜ごはんは松屋<span class="sub">クーポンで50円OFF</span></p>
+          <span class="sim-item-val">50円</span>
+        </div>
+        <div class="sim-item">
+          <p class="sim-item-name">帰りにカラオケ2時間<span class="sub">まねきねこ30%OFF（例：1,200円→840円）</span></p>
+          <span class="sim-item-val">360円</span>
+        </div>
+      </div>
+      <div class="sim-total">合計<span class="num">980</span>円分お得</div>
+    </div>
+
+    <!-- TYPE B -->
+    <div class="sim-type-card">
+      <div class="sim-type-head typeb">
+        <span class="sim-type-tag">TYPE B</span>
+        休日おでかけ・<br>映画デートの日
+      </div>
+      <div class="sim-items">
+        <div class="sim-item">
+          <p class="sim-item-name">映画はTOHOシネマズ<span class="sub">2,000円 → 1,500円</span></p>
+          <span class="sim-item-val">500円</span>
+        </div>
+        <div class="sim-item">
+          <p class="sim-item-name">カフェ休憩にクレープ<span class="sub">ディッパーダン 530円 → 430円</span></p>
+          <span class="sim-item-val">100円</span>
+        </div>
+        <div class="sim-item">
+          <p class="sim-item-name">外出中のChargeSPOT<span class="sub">3〜6時間レンタル 500円 → 0円</span></p>
+          <span class="sim-item-val">500円</span>
+        </div>
+      </div>
+      <div class="sim-total">合計<span class="num">1,100</span>円分お得</div>
+    </div>
+
+    <div class="sim-killer">
+      どっちの1日でも、<br>月額550円は<span class="hl">その日のうちに回収。</span>
+    </div>
+
+    <p class="sim-extra">さらに毎日、<span class="hl">コンビニクーポンが当たるチャンス</span>も。<br><a href="#coupon" style="color:#2e7d32;">特典一覧へ ▼</a></p>
+
+    <p class="sim-note">※カラオケ・映画等の料金は店舗・時間帯・作品により異なります。お得額は一例です。<br>※クーポンにはご利用条件があります。詳細は各クーポンページをご確認ください。</p>
+  </section>
+
+  <!-- ============ COUPON ============ -->
+  <section class="coupon-section" id="coupon" aria-labelledby="coupon-title">
+    <span class="section-label">特典ラインアップ</span>
+    <h2 class="section-title" id="coupon-title">クーポン特典<br><span class="accent">900種類以上</span></h2>
+
+    <!-- ① 映画 -->
+    <div class="coupon-card">
+      <div class="coupon-head movie">
+        <span class="emoji" aria-hidden="true">🎬</span>映画<span class="amount">最大500円OFF</span>
+      </div>
+      <div class="coupon-body">
+        <div class="coupon-brands">
+          <span class="coupon-brand">TOHOシネマズ <span class="off">2,000円→1,500円</span></span>
+          <span class="coupon-brand">イオンシネマ <span class="off">1,800円→1,300円</span></span>
+          <span class="coupon-brand">109シネマズ <span class="off">2,000円→1,500円</span></span>
+        </div>
+        <p class="coupon-copy">全国の映画館で使える割引クーポン。レポ終わりのレイトショーも、デートも、いつでも<strong>500円OFF</strong>。</p>
+      </div>
+    </div>
+
+    <!-- ② カラオケ -->
+    <div class="coupon-card">
+      <div class="coupon-head karaoke">
+        <span class="emoji" aria-hidden="true">🎤</span>カラオケ<span class="amount">最大30%OFF</span>
+      </div>
+      <div class="coupon-body">
+        <div class="coupon-brands">
+          <span class="coupon-brand">まねきねこ <span class="off">30%OFF</span></span>
+          <span class="coupon-brand">ビッグエコー <span class="off">30%OFF</span></span>
+          <span class="coupon-brand">カラオケ館 <span class="off">30%OFF</span></span>
+          <span class="coupon-brand">カラオケの鉄人 <span class="off">30%OFF</span></span>
+          <span class="coupon-brand">ジャンカラ <span class="off">20%OFF</span></span>
+          <span class="coupon-brand">歌広場 <span class="off">20%OFF</span></span>
+        </div>
+        <p class="coupon-copy">フリータイムもルーム料金も、いつもの<strong>3割引</strong>。</p>
+      </div>
+    </div>
+
+    <!-- ③ コンビニ（デイリーチャンス：抽選明記） -->
+    <div class="coupon-card">
+      <div class="coupon-head conbini">
+        <span class="emoji" aria-hidden="true">🏪</span>コンビニ<span class="amount">毎日当たるチャンス</span>
+      </div>
+      <div class="coupon-body">
+        <p class="coupon-copy">大手コンビニ3社のクーポンが<strong>毎日抽選で当たる</strong>「デイリーチャンス」。毎週金曜は10万本の大型企画も。毎朝1タップが習慣になる。</p>
+        <p class="coupon-note-inline">※抽選のため、必ず当たるものではありません。</p>
+      </div>
+    </div>
+
+    <!-- ④ ごはん -->
+    <div class="coupon-card">
+      <div class="coupon-head gohan">
+        <span class="emoji" aria-hidden="true">🍚</span>ごはん
+      </div>
+      <div class="coupon-body">
+        <div class="coupon-brands">
+          <span class="coupon-brand">松屋 <span class="off">50円OFF</span></span>
+          <span class="coupon-brand">ほっかほっか亭 <span class="off">1品プレゼント</span></span>
+          <span class="coupon-brand">コメダ珈琲店 <span class="off">サイズアップ無料</span></span>
+          <span class="coupon-brand">ジョリーパスタ <span class="off">110円OFF</span></span>
+          <span class="coupon-brand">ブロンコビリー <span class="off">ドリンクバー無料</span></span>
+        </div>
+        <p class="coupon-copy">テスト前のファミレス勉強会も、ちょっとお得に。</p>
+
+        <!-- 幹事ブロック（ノンアル業態のみ） -->
+        <div class="kanji-block">
+          <p class="kanji-title">サークルの打ち上げは、<br><span class="hl">幹事がいちばん得をする。</span></p>
+          <div class="coupon-brands">
+            <span class="coupon-brand">安楽亭 <span class="off">10%OFF</span></span>
+            <span class="coupon-brand">七輪房 <span class="off">10%OFF</span></span>
+            <span class="coupon-brand">焼肉の和民 <span class="off">10%OFF</span></span>
+            <span class="coupon-brand">道とん堀 <span class="off">10%OFF</span></span>
+            <span class="coupon-brand">モーモーパラダイス <span class="off">10%OFF</span></span>
+          </div>
+          <!-- 【要確認】10%OFFの適用範囲（1会計全体か・1名分か・上限人数）確認後に金額例を確定 -->
+          <div class="kanji-math">8人で16,000円なら、<span class="num">1,600</span>円OFF</div>
+          <p class="coupon-copy">焼肉・お好み焼き・しゃぶしゃぶ食べ放題が会計から<strong>10%OFF</strong>。幹事のあなたが持っているだけで、全員が得をする。</p>
+          <p class="coupon-note-inline">※割引の適用条件は各クーポンページをご確認ください。</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- ⑤ まだまだある -->
+    <div class="coupon-card">
+      <div class="coupon-head more">
+        <span class="emoji" aria-hidden="true">🎫</span>まだまだある
+      </div>
+      <div class="coupon-body">
+        <div class="coupon-brands">
+          <span class="coupon-brand">自遊空間 <span class="off">200円OFF</span></span>
+          <span class="coupon-brand">ゆう遊空間 <span class="off">30%OFF</span></span>
+          <span class="coupon-brand">ディッパーダン <span class="off">クレープ100円引き</span></span>
+        </div>
+        <p class="coupon-copy">グルメ・レジャー・エンタメ・ショッピングまで、全国<strong>900種類以上</strong>のクーポンが使えます。</p>
+      </div>
+    </div>
+
+    <p class="coupon-section-note">※クーポンの内容・対象店舗は変更となる場合があります。最新の情報はdバリューパスのサイトをご確認ください。</p>
+  </section>
+
+  <!-- ============ dポイント ============ -->
+  <section class="dpoint" aria-labelledby="dpoint-title">
+    <span class="section-label">dポイント特典</span>
+    <h2 class="section-title" id="dpoint-title">dポイントも<span class="accent">貯まる</span></h2>
+
+    <div class="dpoint-list">
+      <div class="dpoint-item">
+        <p class="dpoint-item-title">🛒 Amazonで<span class="hl">最大5倍還元</span></p>
+        <p class="dpoint-item-text">毎月5日・6日発送のお買い物で、dポイントが最大5倍に。dバリューパス契約かつドコモ経由のAmazonプライム会員なら5倍還元。</p>
+      </div>
+      <div class="dpoint-item">
+        <p class="dpoint-item-title">💳 d払いで<span class="hl">最大700pt</span></p>
+        <p class="dpoint-item-text">毎月エントリー＋200円以上のd払い決済で、抽選で最大700ptが当たる。コンビニだけでなく街のお店でも対象。</p>
+      </div>
+      <div class="dpoint-item">
+        <p class="dpoint-item-title">🛍 dショッピングで<span class="hl">ポイント＋クーポン</span></p>
+        <p class="dpoint-item-text">毎月エントリーで最大600pt/月還元。さらに常時使える600円引きクーポンも。</p>
+      </div>
+    </div>
+    <p class="dpoint-note">※各特典は要エントリー・適用条件があります。<br>※d払い、dポイント、dショッピングはNTTドコモの登録商標です。</p>
+  </section>
+
+  <!-- ============ ぜろからAI ============ -->
+  <section class="zerokara" aria-labelledby="zerokara-title">
+    <span class="section-label">就活・スキルアップに</span>
+    <h2 class="section-title" id="zerokara-title">AIを学べる教材が<br><span class="accent">使い放題</span></h2>
+
+    <div class="zerokara-card">
+      <span class="zerokara-name">ぜろからAI</span>
+      <!-- 【要確認】ぜろからAIの正式なサービス説明文言・提供範囲（講座数等）をドコモ公式から引用して差し替え -->
+      <p class="zerokara-copy">AIの基礎から使いこなしまでを、ゼロから学べる学習教材。<br>ESや面接で<span class="u">「AIを使えます」と言えるかどうか</span>が、これからの就活の分かれ目。月550円の中に、その準備が入っています。</p>
+    </div>
+
+    <p class="apps-extra">ほかにも<strong>NAVITIME（8サービス使い放題）</strong>、<strong>ウェザーニュース for dバリューパス（雨雲レーダー60時間）</strong>など、約150の有料級アプリ＆コンテンツが使い放題。</p>
+  </section>
+
+  <!-- ============ エアトリ ============ -->
+  <section class="airtri" aria-labelledby="airtri-title">
+    <span class="section-label">旅行・帰省もお得</span>
+    <h2 class="section-title" id="airtri-title">帰省も、卒業旅行も。</h2>
+
+    <div class="airtri-hero">
+      <p class="airtri-amount">エアトリで<br><span class="num">最大40,000円</span>OFF</p>
+      <div class="airtri-scenes">
+        <span class="airtri-scene">年末年始の帰省</span>
+        <span class="airtri-scene">サークル合宿</span>
+        <span class="airtri-scene">卒業旅行</span>
+      </div>
+      <p class="airtri-copy">国内航空券＋ホテルのセット予約で、ご利用金額に応じて最大40,000円の割引。飛行機に乗る予定が1回でもあるなら、それだけで年会費以上のリターン。</p>
+    </div>
+    <p class="airtri-note">※割引額はご利用金額に応じて変動します。詳細は特典ページをご確認ください。</p>
+  </section>
+
+  <!-- ============ dアカウント ============ -->
+  <section class="daccount" aria-labelledby="daccount-title">
+    <span class="section-label">dアカウントだけでOK</span>
+    <h2 class="section-title" id="daccount-title">ドコモユーザー<br>じゃなくても、<span class="accent">使えます</span></h2>
+
+    <div class="daccount-card">
+      <p class="daccount-copy">dバリューパスに必要なのは<span class="hl">無料のdアカウントだけ</span>。お使いの携帯キャリアは問いません。</p>
+      <div class="daccount-carriers">
+        <span class="daccount-carrier">ahamo</span>
+        <span class="daccount-carrier">povo</span>
+        <span class="daccount-carrier">LINEMO</span>
+        <span class="daccount-carrier">楽天モバイル</span>
+        <span class="daccount-carrier">その他どこでも</span>
+      </div>
+      <p class="daccount-copy" style="font-size:13px;">dアカウントを持っていない方も、申し込みの流れの中で無料でつくれます（数分で完了）。</p>
+    </div>
+  </section>
+
+  <!-- ============ CAMPAIGN ============ -->
+  <section class="campaign" id="apply" aria-labelledby="campaign-label">
+    <span class="section-label" id="campaign-label">キャンペーン</span>
+
+    <div class="camp-hero">
+      <p class="camp-hero-base">初回<span class="hl-num">31</span>日間無料<span class="ast">※</span></p>
+      <p class="camp-hero-base-note">※31日経過後は自動継続となり、ドコモ以外の方はその月から1カ月分の料金（月額税込550円）がかかります。</p>
+
+      <p class="camp-divider">さらにエントリーで実質2〜3ヶ月無料！</p>
+
+      <div class="camp-twin">
+        <div class="camp-twin-card two">
+          <span class="camp-twin-tag">誰でも</span>
+          <div><span class="camp-twin-num">2</span><span class="camp-twin-text">カ月実質無料</span></div>
+          <div class="camp-twin-detail">
+            初回31日間無料 ＋
+            <span style="display:inline-flex; align-items:center; gap:2px;"><span class="pt-icon" aria-hidden="true">P</span><span style="font-weight:700;">550pt</span></span>
+          </div>
+        </div>
+        <div class="camp-twin-card three">
+          <span class="camp-twin-tag">対象プランなら</span>
+          <div><span class="camp-twin-num">3</span><span class="camp-twin-text">カ月実質無料</span></div>
+          <div class="camp-twin-detail">
+            初回31日間無料 ＋
+            <span style="display:inline-flex; align-items:center; gap:2px;"><span class="pt-icon" aria-hidden="true">P</span><span style="font-weight:700;">550pt</span></span>
+            ＋
+            <span style="display:inline-flex; align-items:center; gap:2px;"><span class="pt-icon" aria-hidden="true">P</span><span style="font-weight:700;">550pt</span></span>
+          </div>
+        </div>
+      </div>
+
+      <div class="camp-hero-meta">
+        <p class="camp-hero-plans">対象プラン：ドコモMAX・ポイ活MAX・ポイ活20・mini・ahamo</p>
+        <p class="camp-hero-note">
+          要エントリー／還元はdポイント(期間・用途限定)<br>
+          終了時期未定のため、予告なく終了となる場合があります<br>
+          ポイント進呈時期：各対象月の翌月末を予定<br>
+          ポイント有効期限：進呈日を含め90日
+        </p>
+      </div>
+    </div>
+
+    <div class="camp-cond"><strong>ドコモ回線をお持ちでない方もOK</strong></div>
+    <a class="camp-entry-link" href="#faq-entry">エントリー方法はこちら ▼</a>
+  </section>
+
+  <!-- ============ FAQ ============ -->
+  <section class="faq" aria-labelledby="faq-title">
+    <span class="section-label">よくあるご質問</span>
+    <h2 class="section-title" id="faq-title">FAQ</h2>
+
+    <p class="faq-group-label">▶ ご利用について</p>
+    <div class="faq-list">
+      <div class="faq-item">
+        <button type="button" class="faq-q" aria-expanded="false" aria-controls="faq-a1"><span>ドコモユーザーじゃなくても契約できますか？</span></button>
+        <div class="faq-a" id="faq-a1">はい。無料のdアカウントがあればどなたでもご契約いただけます。お使いの携帯キャリアは問いません。ahamo・povo・LINEMO・楽天モバイルなど他社回線の方もOKです。</div>
+      </div>
+      <div class="faq-item">
+        <button type="button" class="faq-q" aria-expanded="false" aria-controls="faq-a2"><span>大学生でも申し込めますか？</span></button>
+        <!-- 【要確認】未成年（18歳未満・成年年齢との関係）の契約条件・親権者同意の要否をドコモ公式で確認の上、必要に応じて注記を追記 -->
+        <div class="faq-a" id="faq-a2">はい、お申し込みいただけます。無料のdアカウントをご用意ください。</div>
+      </div>
+      <!-- 【要確認】支払い方法FAQ：クレジットカード以外の決済手段（d払い残高・電話料金合算等）の可否を確認後に公開
+      <div class="faq-item">
+        <button type="button" class="faq-q" aria-expanded="false" aria-controls="faq-a-pay"><span>支払い方法は何が使えますか？</span></button>
+        <div class="faq-a" id="faq-a-pay">（確認後に記載）</div>
+      </div>
+      -->
+      <div class="faq-item">
+        <button type="button" class="faq-q" aria-expanded="false" aria-controls="faq-a3"><span>解約はいつでもできますか？</span></button>
+        <div class="faq-a" id="faq-a3">はい、いつでも解約可能です。解約のタイミングや手続きに関する詳細は、お申し込み後にご確認いただけます。</div>
+      </div>
+      <div class="faq-item">
+        <button type="button" class="faq-q" aria-expanded="false" aria-controls="faq-a4"><span>モバイルバッテリー借り放題に回数制限はありますか？</span></button>
+        <div class="faq-a" id="faq-a4">契約期間中、利用回数の制限なく何度でも0円でご利用いただけます。ただし一部のテーマパーク、スタジアム、大学、医療機関など、通常とは異なる料金が設定されている場所では、使い放題が適用されません。</div>
+      </div>
+      <div class="faq-item">
+        <button type="button" class="faq-q" aria-expanded="false" aria-controls="faq-a5"><span>実質無料とはどういう意味ですか？</span></button>
+        <div class="faq-a" id="faq-a5">初月無料特典とdポイント還元(期間・用途限定)を組み合わせることで、実質的に月額料金を相殺できる仕組みです。対象プランご契約の方は最大3カ月、それ以外の方は最大2カ月が実質無料となります。要エントリー。</div>
+      </div>
+      <div class="faq-item" id="faq-entry">
+        <button type="button" class="faq-q" aria-expanded="false" aria-controls="faq-a6"><span>2ヶ月あるいは3ヶ月の実質無料キャンペーンのエントリー方法は？</span></button>
+        <div class="faq-a" id="faq-a6"><span style="color:#e60012; font-weight:700;">必ずキャンペーンにエントリーする前に当ページからdバリューパスへお申し込みください。</span>先に当ページからお申し込みいただかない場合、新規契約特典が受けられない場合がございます。キャンペーンは、<a href="https://www.sugotoku.docomo.ne.jp/cs/cam/sugotoku/901/cpn20260301.html" target="_blank" rel="noopener" style="color:#0066cc; text-decoration:underline;">こちら</a>からエントリーできます。</div>
+      </div>
+    </div>
+
+    <p class="faq-group-label">▶ dポイントについて</p>
+    <div class="faq-list">
+      <div class="faq-item">
+        <button type="button" class="faq-q" aria-expanded="false" aria-controls="faq-a7"><span>ahamoや他社回線でもdポイントは貯まりますか？</span></button>
+        <div class="faq-a" id="faq-a7">はい、dアカウントをお持ちであれば、ahamoや他社回線をご利用の方でもdバリューパスの各種特典でdポイントを貯めることができます。d払い、Amazon、dショッピングなどの還元・抽選はすべてご利用いただけます。</div>
+      </div>
+      <div class="faq-item">
+        <button type="button" class="faq-q" aria-expanded="false" aria-controls="faq-a8"><span>dポイント（期間・用途限定）とは何ですか？</span></button>
+        <div class="faq-a" id="faq-a8">キャンペーン等で進呈される<strong>有効期限と利用範囲が限定されたdポイント</strong>です。通常のdポイントと同様にd払いやドコモのサービスでご利用いただけますが、進呈日から一定期間内（多くの場合は<strong>進呈日を含め90日以内</strong>）に利用する必要があります。</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ CLOSING ============ -->
+  <section class="closing">
+    <p class="closing-copy">充電も、映画も、カラオケも。</p>
+    <p class="closing-main">月<span class="hl">550円</span>で、<br>大学生活がちょっと軽くなる。</p>
+    <a href="#" class="fv-cta js-open-modal">今すぐ申し込む ▶</a>
+    <p class="fv-cta-note">初回31日間無料 ※31日経過後は自動継続となり、ドコモ以外の方はその月から1カ月分の料金（月額税込550円）がかかります。</p>
+  </section>
+
+  </main>
+
+  <!-- ============ FOOTER ============ -->
+  <div class="footer-links">
+    <a class="footer-link-item" href="https://www.sugotoku.docomo.ne.jp/cs/faq.html" target="_blank" rel="noopener">よくある質問・お問い合わせ</a>
+    <a class="footer-link-item" href="https://www.sugotoku.docomo.ne.jp/cs/representation.html" target="_blank" rel="noopener">提供事業者に関する表示</a>
+    <a class="footer-link-item" href="https://kaiteki-app.com/gaibusoushin/1.html" target="_blank" rel="noopener">お客様のご利用端末からの情報の外部送信</a>
+  </div>
+  <footer>
+    <p class="footer-company">© 株式会社ピアズ</p>
+  </footer>
+
+  <div class="spacer"></div>
+
+  <!-- Sticky CTA -->
+  <div class="sticky-cta" id="stickyCta">
+    <a href="#" class="js-open-modal">今すぐ申し込む</a>
+    <p class="sticky-note">初回31日間無料 ※31日経過後は自動継続となり、ドコモ以外の方はその月から1カ月分の料金（月額税込550円）がかかります。</p>
+  </div>
+
+</div>
+
+<!-- ============ MODAL ============ -->
+<div class="modal-overlay" id="applyModal" role="dialog" aria-modal="true" aria-labelledby="modalTitle" hidden>
+  <div class="modal-inner" id="modalInner">
+
+    <div class="modal-head">
+      <div class="modal-head-title" id="modalTitle">
+        <p><span class="brand-chip">dバリューパス</span>&nbsp;&nbsp;は</p>
+        <p>NTTドコモのサービスです。</p>
+      </div>
+      <div class="modal-sep"></div>
+      <p class="modal-caution">これより先、<span class="dot-u">NTTドコモの画面</span>に移動します。</p>
+      <p class="modal-caution"><span class="dot-u">dアカウント</span>、または<span class="dot-u">ドコモ回線</span>が必要です。</p>
+    </div>
+
+    <div class="modal-daccount">
+      <p class="modal-daccount-head"><span class="warn">⚠</span> dアカウントをお持ちでない場合</p>
+      <p>必ず先に
+        <a href="https://id.smt.docomo.ne.jp/cgi8/id/register" target="_blank" rel="noopener">こちら</a>
+        から<strong>dアカウントのご作成</strong>をお願い致します。ご作成後は当ページに戻って手続きを進めてください。</p>
+      <p class="small">※dアカウントは、ドコモ回線以外の方も無料でご利用いただけます。</p>
+      <p class="small red">※当ページを離れてdアカウントをご作成されたり、dバリューパスへご契約いただいた場合は、新規契約特典が受けられない場合がございます。</p>
+    </div>
+
+    <div class="modal-cta-wrap">
+      <!-- 【要設定】本番の申込URL（sgtk_c=SGTKoth000584系パラメータ付き）をJS内APPLY_URLに設定 -->
+      <a href="#" class="modal-cta" id="modalApplyBtn">初回31日間無料で始める ▶</a>
+      <p class="modal-cta-note">初回31日間無料 ※31日経過後は自動継続となり、ドコモ以外の方はその月から1カ月分の料金（月額税込550円）がかかります。</p>
+    </div>
+
+    <button type="button" class="modal-close" id="closeModal" aria-label="閉じる">×</button>
+  </div>
+</div>
+
+<script>
+(function() {
+  // ================================================
+  // 【要設定】申込先URL（eventcode SGTKoth000584 の導線）
+  // 例: 'https://www.sugotoku.docomo.ne.jp/...?sgtk_c=U0dUS290aDAwMDU4NA'
+  // ================================================
+  var APPLY_URL = '';
+  var applyBtn = document.getElementById('modalApplyBtn');
+  if (APPLY_URL) applyBtn.setAttribute('href', APPLY_URL);
+
+  // ---------- FAQ accordion（aria-expanded対応） ----------
+  document.querySelectorAll('.faq-item').forEach(function(item) {
+    var btn = item.querySelector('.faq-q');
+    btn.addEventListener('click', function() {
+      var isOpen = item.classList.toggle('open');
+      btn.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+    });
+  });
+
+  // ---------- Sticky CTA ----------
+  var sticky = document.getElementById('stickyCta');
+  var fv = document.querySelector('.fv');
+  window.addEventListener('scroll', function() {
+    if (window.scrollY > fv.offsetHeight) {
+      sticky.classList.add('show');
+    } else {
+      sticky.classList.remove('show');
+    }
+  }, { passive: true });
+
+  // ---------- Modal（フォーカス管理付き） ----------
+  var modal = document.getElementById('applyModal');
+  var closeBtn = document.getElementById('closeModal');
+  var lastFocused = null;
+
+  function openModal() {
+    lastFocused = document.activeElement;
+    modal.hidden = false;
+    modal.classList.add('open');
+    document.body.style.overflow = 'hidden';
+    closeBtn.focus();
+  }
+  function closeModal() {
+    modal.classList.remove('open');
+    modal.hidden = true;
+    document.body.style.overflow = '';
+    if (lastFocused) lastFocused.focus();
+  }
+
+  document.querySelectorAll('.js-open-modal').forEach(function(btn) {
+    btn.addEventListener('click', function(e) {
+      e.preventDefault();
+      openModal();
+    });
+  });
+  closeBtn.addEventListener('click', closeModal);
+  modal.addEventListener('click', function(e) {
+    if (e.target === modal) closeModal();
+  });
+
+  // Escで閉じる
+  document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape' && modal.classList.contains('open')) closeModal();
+  });
+
+  // 簡易フォーカストラップ
+  modal.addEventListener('keydown', function(e) {
+    if (e.key !== 'Tab' || !modal.classList.contains('open')) return;
+    var focusables = modal.querySelectorAll('a[href], button');
+    var first = focusables[0];
+    var last = focusables[focusables.length - 1];
+    if (e.shiftKey && document.activeElement === first) {
+      e.preventDefault();
+      last.focus();
+    } else if (!e.shiftKey && document.activeElement === last) {
+      e.preventDefault();
+      first.focus();
+    }
+  });
+})();
+</script>
+
+</body>
+</html>

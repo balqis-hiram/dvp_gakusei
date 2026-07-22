@@ -795,14 +795,15 @@
   /* ============ エアトリ ============ */
   .airtri { background: var(--bg-alt); }
   .airtri-photo-wrap {
-    border-radius: var(--radius);
+    border-radius: var(--radius-s);
     overflow: hidden;
-    margin-bottom: 20px;
+    margin-bottom: 18px;
   }
   .airtri-photo {
     width: 100%;
     aspect-ratio: 16 / 10;
     object-fit: cover;
+    object-position: center 20%;
     display: block;
   }
   .airtri-hero {
@@ -1313,7 +1314,7 @@
     </div>
 
     <div class="fv-airtri">
-      <img src="images/beach.jpg" alt="卒業旅行のビーチリゾート" class="fv-airtri-img">
+      <img src="images/beach.jpg" alt="沖縄の海と街並み" class="fv-airtri-img">
       <div class="fv-airtri-img-overlay"></div>
       <p class="fv-airtri-text">帰省・卒業旅行に　エアトリで<span class="hl">最大40,000円OFF</span></p>
     </div>
@@ -1605,11 +1606,10 @@
     <span class="sec-label">旅行・帰省</span>
     <h2 class="sec-title" id="airtri-title">帰省も、卒業旅行も。</h2>
 
-    <div class="airtri-photo-wrap">
-      <img src="images/travel.jpg" alt="空港でスーツケースを引く大学生グループ" class="airtri-photo">
-    </div>
-
     <div class="airtri-hero">
+      <div class="airtri-photo-wrap">
+        <img src="images/travel.jpg" alt="空港でスーツケースを引く大学生グループ" class="airtri-photo">
+      </div>
       <p class="airtri-amount">エアトリで<span class="num">-40,000<span class="jp">円</span></span></p>
       <div class="airtri-scenes">
         <span class="airtri-scene">年末年始の帰省</span>

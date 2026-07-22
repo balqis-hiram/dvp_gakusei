@@ -106,17 +106,22 @@
   .fv-top {
     display: flex;
     align-items: center;
-    justify-content: space-between;
-    margin-bottom: 24px;
+    margin-bottom: 20px;
   }
   .fv-brand-logo { width: 132px; }
   .fv-badge {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
     font-family: var(--font-display);
     font-weight: 900;
     font-size: 13px;
-    letter-spacing: 0.14em;
-    color: var(--ink-soft);
-    white-space: nowrap;
+    letter-spacing: 0.1em;
+    color: white;
+    background: var(--red);
+    padding: 9px 20px;
+    border-radius: var(--radius) 0 var(--radius-s) 0;
   }
 
   .fv-photo-wrap {
@@ -154,13 +159,14 @@
   .fv-catch .price {
     font-family: var(--font-num);
     font-size: 46px;
-    color: var(--yellow);
+    color: var(--red);
     line-height: 1;
     letter-spacing: 0.01em;
     vertical-align: -3px;
     margin: 0 2px;
+    text-shadow: 0 0 16px rgba(255,255,255,0.65), 0 0 3px rgba(255,255,255,0.5);
   }
-  .fv-catch .yen { font-size: 24px; color: var(--yellow); }
+  .fv-catch .yen { font-size: 24px; color: var(--red); text-shadow: 0 0 12px rgba(255,255,255,0.6); }
 
   .fv-sub {
     font-size: 15px;
@@ -168,11 +174,13 @@
     color: var(--ink-soft);
     line-height: 2;
     margin-bottom: 24px;
+    text-align: center;
   }
   .fv-sub .u {
-    background: linear-gradient(transparent 68%, var(--yellow) 68%);
+    background: linear-gradient(transparent 82%, var(--red) 82%);
     color: var(--ink);
     font-weight: 700;
+    padding-bottom: 2px;
   }
 
   .fv-chips {
@@ -1201,10 +1209,10 @@
   <header class="fv">
     <div class="fv-top">
       <img src="images/dvp_logo.png" alt="dバリューパス" class="fv-brand-logo">
-      <span class="fv-badge">大学生必見</span>
     </div>
 
     <div class="fv-photo-wrap">
+      <span class="fv-badge">大学生必見</span>
       <img src="images/fv_main.jpg" alt="キャンパスを歩く大学生" class="fv-photo">
       <h1 class="fv-catch">
         ChargeSPOTが借り放題、<br>
@@ -1214,7 +1222,7 @@
 
     <p class="fv-sub">
       1回（3時間〜）借りれば、<span class="u">ほぼ元が取れる。</span><br>
-      映画500円OFF・カラオケ最大30%OFFもついてくる。
+      授業、バイト、そのまま飲み会。<br>1日外にいても、充電切れの不安ゼロ。
     </p>
 
     <div class="fv-chips">

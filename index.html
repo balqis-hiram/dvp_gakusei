@@ -56,7 +56,6 @@
       animation-iteration-count: 1 !important;
       transition-duration: 0.01ms !important;
     }
-    .marquee-track { animation: none !important; transform: none !important; flex-wrap: wrap; }
   }
 
   [class*="-num"], .sim-item-val, .kanji-math .num, .sim-tag { font-weight: 700; }
@@ -195,8 +194,9 @@
   .fv-chips {
     display: flex;
     flex-wrap: wrap;
+    justify-content: center;
     gap: 8px;
-    margin-bottom: 28px;
+    margin-bottom: 14px;
   }
   .fv-chip {
     font-size: 12px;
@@ -299,8 +299,9 @@
     left: 14px;
     right: 14px;
     bottom: 12px;
-    font-size: 13px;
+    font-size: 17px;
     font-weight: 700;
+    line-height: 1.5;
     color: white;
     text-shadow: 0 1px 8px rgba(0,0,0,0.4);
   }
@@ -330,31 +331,6 @@
     line-height: 1.7;
     margin-top: 14px;
   }
-
-  /* ============ マーキー帯（シグネチャー） ============ */
-  .marquee {
-    background: var(--charge-dark);
-    padding: 14px 0;
-    overflow: hidden;
-  }
-  .marquee-track {
-    display: flex;
-    align-items: center;
-    gap: 28px;
-    width: max-content;
-    animation: marquee 36s linear infinite;
-  }
-  @keyframes marquee {
-    to { transform: translateX(-50%); }
-  }
-  .marquee-item {
-    color: white;
-    font-size: 13px;
-    font-weight: 700;
-    letter-spacing: 0.08em;
-    white-space: nowrap;
-  }
-  .marquee-sep { color: rgba(255,255,255,0.55); font-size: 12px; }
 
   /* ============ 実質2ヶ月無料バンド ============ */
   .entry-band {
@@ -447,7 +423,7 @@
     gap: 10px;
   }
   .battery-chip {
-    font-size: 12px;
+    font-size: 14px;
     font-weight: 700;
     border: 1px solid var(--line);
     border-radius: 999px;
@@ -1288,12 +1264,6 @@
       授業、バイト、そのまま飲み会。<br>1日ずっと外でも、充電切れの不安ゼロ。
     </p>
 
-    <div class="fv-chips">
-      <span class="fv-chip free">初回31日間無料</span>
-      <span class="fv-chip">ドコモ回線をお持ちでない方もOK</span>
-      <span class="fv-chip">dアカウントは無料でつくれます</span>
-    </div>
-
     <span class="fv-bene-label">約<span class="accent">900</span>以上のクーポンが目白押し</span>
     <div class="fv-bene">
       <div class="fv-bene-card">
@@ -1316,36 +1286,16 @@
     <div class="fv-airtri">
       <img src="images/beach.jpg" alt="沖縄の海と街並み" class="fv-airtri-img">
       <div class="fv-airtri-img-overlay"></div>
-      <p class="fv-airtri-text">帰省・卒業旅行に　エアトリで<span class="hl">最大40,000円OFF</span></p>
+      <p class="fv-airtri-text">帰省・卒業旅行に<br>エアトリ for dバリューパスで<span class="hl">最大40,000円OFF</span></p>
     </div>
 
-    <a href="#" class="cta js-open-modal">今すぐ申し込む ▶</a>
+    <div class="fv-chips">
+      <span class="fv-chip">ドコモ回線をお持ちでない方もOK</span>
+    </div>
+
+    <a href="#" class="cta js-open-modal">初回31日間無料で始める ▶</a>
     <p class="cta-note">初回31日間無料 ※31日経過後は自動継続となり、ドコモ以外の方はその月から1カ月分の料金（月額税込550円）がかかります。</p>
   </header>
-
-  <!-- ============ ブランドマーキー ============ -->
-  <div class="marquee" aria-hidden="true">
-    <div class="marquee-track">
-      <span class="marquee-item">TOHOシネマズ</span><span class="marquee-sep">✦</span>
-      <span class="marquee-item">イオンシネマ</span><span class="marquee-sep">✦</span>
-      <span class="marquee-item">まねきねこ</span><span class="marquee-sep">✦</span>
-      <span class="marquee-item">ビッグエコー</span><span class="marquee-sep">✦</span>
-      <span class="marquee-item">松屋</span><span class="marquee-sep">✦</span>
-      <span class="marquee-item">コメダ珈琲店</span><span class="marquee-sep">✦</span>
-      <span class="marquee-item">NAVITIME</span><span class="marquee-sep">✦</span>
-      <span class="marquee-item">エアトリ</span><span class="marquee-sep">✦</span>
-      <span class="marquee-item">クーポン900種類以上</span><span class="marquee-sep">✦</span>
-      <span class="marquee-item">TOHOシネマズ</span><span class="marquee-sep">✦</span>
-      <span class="marquee-item">イオンシネマ</span><span class="marquee-sep">✦</span>
-      <span class="marquee-item">まねきねこ</span><span class="marquee-sep">✦</span>
-      <span class="marquee-item">ビッグエコー</span><span class="marquee-sep">✦</span>
-      <span class="marquee-item">松屋</span><span class="marquee-sep">✦</span>
-      <span class="marquee-item">コメダ珈琲店</span><span class="marquee-sep">✦</span>
-      <span class="marquee-item">NAVITIME</span><span class="marquee-sep">✦</span>
-      <span class="marquee-item">エアトリ</span><span class="marquee-sep">✦</span>
-      <span class="marquee-item">クーポン900種類以上</span><span class="marquee-sep">✦</span>
-    </div>
-  </div>
 
   <main>
 

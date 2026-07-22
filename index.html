@@ -214,6 +214,20 @@
   }
 
   /* 3ベネフィット：数字主導カード */
+  .fv-bene-label {
+    display: block;
+    text-align: center;
+    font-family: var(--font-display);
+    font-size: 15px;
+    font-weight: 900;
+    color: var(--ink);
+    margin-bottom: 10px;
+  }
+  .fv-bene-label .accent {
+    font-family: var(--font-num);
+    color: var(--red);
+    font-size: 19px;
+  }
   .fv-bene {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -264,19 +278,33 @@
   }
 
   .fv-airtri {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 8px;
-    flex-wrap: wrap;
-    border: 1px dashed var(--line);
+    position: relative;
     border-radius: var(--radius-s);
-    padding: 12px 14px;
-    font-size: 13px;
-    font-weight: 700;
+    overflow: hidden;
     margin-bottom: 28px;
   }
-  .fv-airtri .hl { color: var(--charge-dark); font-weight: 900; }
+  .fv-airtri-img {
+    width: 100%;
+    aspect-ratio: 3 / 1;
+    object-fit: cover;
+    display: block;
+  }
+  .fv-airtri-img-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(180deg, rgba(15,15,19,0) 35%, rgba(15,15,19,0.72) 100%);
+  }
+  .fv-airtri-text {
+    position: absolute;
+    left: 14px;
+    right: 14px;
+    bottom: 12px;
+    font-size: 13px;
+    font-weight: 700;
+    color: white;
+    text-shadow: 0 1px 8px rgba(0,0,0,0.4);
+  }
+  .fv-airtri .hl { color: var(--yellow); font-weight: 900; }
 
   /* CTA */
   .cta {
@@ -724,6 +752,14 @@
 
   /* ============ ゼロからAI ============ */
   .zerokara { background: var(--bg); }
+  .zerokara-title-row {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 28px;
+  }
+  .zerokara-title-row .sec-title { margin-bottom: 0; }
+  .zerokara-icon { width: 44px; height: 44px; flex-shrink: 0; }
   .zerokara-card {
     border: 1px solid var(--line);
     border-radius: var(--radius);
@@ -758,6 +794,17 @@
 
   /* ============ エアトリ ============ */
   .airtri { background: var(--bg-alt); }
+  .airtri-photo-wrap {
+    border-radius: var(--radius);
+    overflow: hidden;
+    margin-bottom: 20px;
+  }
+  .airtri-photo {
+    width: 100%;
+    aspect-ratio: 16 / 10;
+    object-fit: cover;
+    display: block;
+  }
   .airtri-hero {
     background: white;
     border: 1px solid var(--line);
@@ -1236,7 +1283,7 @@
     </div>
 
     <p class="fv-sub">
-      1回（3時間〜）借りれば、<span class="u">ほぼ元が取れる。</span><br>
+      1回（6時間〜）借りれば、<span class="u">元が取れる！</span><br>
       授業、バイト、そのまま飲み会。<br>1日ずっと外でも、充電切れの不安ゼロ。
     </p>
 
@@ -1246,6 +1293,7 @@
       <span class="fv-chip">dアカウントは無料でつくれます</span>
     </div>
 
+    <span class="fv-bene-label">約<span class="accent">900</span>以上のクーポンが目白押し</span>
     <div class="fv-bene">
       <div class="fv-bene-card">
         <img src="images/movie-theater.png" alt="映画" class="fv-bene-icon">
@@ -1264,7 +1312,11 @@
       </div>
     </div>
 
-    <p class="fv-airtri">帰省・卒業旅行に　エアトリで<span class="hl">最大40,000円OFF</span></p>
+    <div class="fv-airtri">
+      <img src="images/beach.jpg" alt="卒業旅行のビーチリゾート" class="fv-airtri-img">
+      <div class="fv-airtri-img-overlay"></div>
+      <p class="fv-airtri-text">帰省・卒業旅行に　エアトリで<span class="hl">最大40,000円OFF</span></p>
+    </div>
 
     <a href="#" class="cta js-open-modal">今すぐ申し込む ▶</a>
     <p class="cta-note">初回31日間無料 ※31日経過後は自動継続となり、ドコモ以外の方はその月から1カ月分の料金（月額税込550円）がかかります。</p>
@@ -1534,7 +1586,10 @@
   <!-- ============ ゼロからAI ============ -->
   <section class="zerokara" aria-labelledby="zerokara-title">
     <span class="sec-label">アプリ＆教材</span>
-    <h2 class="sec-title" id="zerokara-title">就活・スキルアップに。<br>AIを学べる教材が<span class="accent">使い放題</span></h2>
+    <div class="zerokara-title-row">
+      <img src="images/artificial-intelligence.png" alt="" class="zerokara-icon">
+      <h2 class="sec-title" id="zerokara-title">就活・スキルアップに。<br>AIを学べる教材が<span class="accent">使い放題</span></h2>
+    </div>
 
     <div class="zerokara-card">
       <span class="zerokara-name">ゼロからAI</span>
@@ -1549,6 +1604,10 @@
   <section class="airtri" aria-labelledby="airtri-title">
     <span class="sec-label">旅行・帰省</span>
     <h2 class="sec-title" id="airtri-title">帰省も、卒業旅行も。</h2>
+
+    <div class="airtri-photo-wrap">
+      <img src="images/travel.jpg" alt="空港でスーツケースを引く大学生グループ" class="airtri-photo">
+    </div>
 
     <div class="airtri-hero">
       <p class="airtri-amount">エアトリで<span class="num">-40,000<span class="jp">円</span></span></p>
@@ -1570,9 +1629,9 @@
     <div class="daccount-card">
       <p class="daccount-copy">dバリューパスに必要なのは<span class="hl">無料のdアカウントだけ</span>。お使いの携帯キャリアは問いません。</p>
       <div class="daccount-carriers">
-        <span class="daccount-carrier">ahamo</span>
-        <span class="daccount-carrier">povo</span>
-        <span class="daccount-carrier">LINEMO</span>
+        <span class="daccount-carrier">docomo</span>
+        <span class="daccount-carrier">KDDI</span>
+        <span class="daccount-carrier">SoftBank</span>
         <span class="daccount-carrier">楽天モバイル</span>
         <span class="daccount-carrier">その他どこでも</span>
       </div>
